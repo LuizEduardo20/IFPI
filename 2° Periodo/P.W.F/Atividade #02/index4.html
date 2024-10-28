@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Requisito a -->
+    <h2 id="tamanho"></h2>
+
+    <!-- Requisito b -->
+    <h2 id="minusculo"></h2>
+
+    <!-- Requisito c -->
+    <h2 id="substituirLetras"></h2>
+
+    <!-- Requisito d -->
+    <h2 id="semEspaco"></h2>
+
+
+    <script>
+        const pegarNome = prompt('Digite seu nome:')
+        const tamanho = document.querySelector('#tamanho')
+        const minusculo = document.querySelector('#minusculo')
+        const substituirLetras = document.querySelector('#substituirLetras')
+        const semEspaco = document.querySelector('#semEspaco')
+
+        // Requisito a
+        tamanho.innerHTML = `Seu nome tem ${pegarNome.length} letras (contando espaços)`
+
+        // Requisito b
+        minusculo.innerHTML = `Seu nome em minusculo fica ${pegarNome.toLowerCase()}`
+
+        // Requisito c
+        substituirLetras.innerHTML = `Seu nome com caracteres especiais fica ${pegarNome.replace('a', 'e', 'i', 'o', '@', '3', '1', '0')}`
+
+        // Requisito d
+        const semespaco = pegarNome.trim()
+        semEspaco.innerHTML = `Seu nome tem ${semespaco.length} letras (sem contar os espaços)`
+    </script>
+</body>
+</html>
