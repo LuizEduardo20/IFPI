@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.cabeçalho{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.cabeçalho img{
+    height: 60px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.cabeçalho h1{
+    display: inline-block;
+    font-size: 10vh;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.navegacao{
+    background-color: #646464;
+    padding: 10px;
+}
+
+.navegacao ul{
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.navegacao ul li{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.navegacao ul li a{
+    font-family: "Noto Serif", serif;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navegacao ul li a:hover{
+    color: #ccc;
+}
+
+.noticias{
+    position: relative;
+    left: 5vh;
+    max-width: 150vh;
+    padding: 20px;
+}
+
+#noticias-principais{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#noticias-principais h2{
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.noticia{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.noticia h3{
+    color: #2c3e50;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.noticia img{
+    position: relative;
+    left: 10vh;
+    width: 80vh;
+}
+
+.noticia p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.noticia time {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+
+.container-principal{
+    position: absolute;
+    left: 160vh;
+    top: 30vh;
+    width: 45vh;
+}
+
+#noticias-laterais h2{
+    font-family: "Roboto Mono", monospace;
+    font-weight: 200;
+    text-align: center;
+}
+
+.noticia-lateral{
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 5px;
+}
+
+.noticia-lateral h3{
+    text-align: center;
+}
+
+.noticia-lateral p{
+    font-family: "Noto Serif", serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.rodape{
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.rodape-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright p{
+    font-size: 14px;
+    color: #666;
+}
+
+.informacoes-contato{
+    width: 50%;
+}
+
+.informacoes-contato ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.informacoes-contato li{
+    margin-bottom: 10px;
+}
+
+.informacoes-contato strong{
+    font-weight: bold;
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .cabeçalho {
+        padding: 10px;
+    }
+
+    .cabeçalho img {
+        height: 40px;
+    }
+
+    .cabeçalho h1 {
+        font-size: 8vw;
+    }
+
+    .navegacao {
+        background-color: #646464;
+        padding: 5px;
+    }
+
+    .navegacao ul li {
+        display: flex;
+    }
+
+    .navegacao ul li a {
+        font-size: 12px;
+    }
+
+    .noticias {
+        left: 0;
+        max-width: 100%;
+    }
+
+    #noticias-principais {
+        flex-direction: column;
+    }
+
+    .noticia {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .noticia img {
+        width: 50vh;
+        height: auto;
+    }
+
+    .container-principal {
+        position: static;
+        left: 0;
+        top: auto;
+        width: 90vh;
+        padding: 20px;
+    }
+
+    #noticias-laterais {
+        margin-top: 20px;
+    }
+
+    .rodape {
+        padding: 15px;
+    }
+
+    .rodape-container {
+        flex-direction: column;
+    }
+
+    .informacoes-contato {
+        width: 100%;
+    }
+
+    .copyright{
+        position: absolute;
+        bottom: -279vh;
+        left: 55vh;
+    }
+}
