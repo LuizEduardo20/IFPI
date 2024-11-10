@@ -10,9 +10,26 @@ class Veiculo:
         self.proprietario = proprietario
         self.quilometragem = quilometragem
 
+    def digitar_cor(self, cor):
+        self.cor = cor
+
+    def digitar_placa(self, placa):
+        self.placa =placa
+
+    def digitar_proprietario(self, proprietario):
+        self.proprietario =proprietario
+
+    def digitar_quilometragem(self, quilometragem):
+        self.quilometragem = quilometragem
+
+
     def __str__(self):
         return '''Chassi: {},\nMarca: {},\nModelo: {},\nAno: {},\nPlaca: {},\nCor: {},\nPropriétario: {},\nQuilometragem: {}KM.'''.format(self.chassi, self.marca, self.modelo, self.ano, self.placa, self.cor, self.proprietario, self.quilometragem)
 
-especificacoes = Veiculo('AB1234F77', 'Nissam', 'R34 Nismo', 1998, 'AB1234', 'Azul Marinho(2f2c79)', 'Eduardo', 23185)
+especificacoes = Veiculo('AB1234F77', 'Nissam', 'R34 Nismo', 1998)
+especificacoes.digitar_cor('Azul Marinho(2f2c79)')
+especificacoes.digitar_placa('AB1234')
+especificacoes.digitar_proprietario('Eduardo')
+especificacoes.digitar_quilometragem(21876)
 
-print(str(especificacoes))
+print(especificacoes)
