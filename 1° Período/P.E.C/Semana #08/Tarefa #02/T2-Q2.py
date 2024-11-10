@@ -1,5 +1,4 @@
 def soma(num):
-    # numero ENTRE 0 e 100.000
     if 0 < num < 100000:
         u = num % 10
         num = num // 10 
