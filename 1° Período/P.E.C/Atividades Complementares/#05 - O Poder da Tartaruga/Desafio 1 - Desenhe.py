@@ -1,6 +1,5 @@
 from turtle import *
 
-# Um quadrado 
 shape("square")
 speed(8)
 
@@ -14,17 +13,13 @@ forward(50)
 right(90)
 forward(50)
 
-# Triângulo
-
 color("Blue")
 right(90)
 forward(50) 
-left(120)  # 120 graus à esquerda
+left(120)
 forward(50) 
 left(120)
 forward(50)
-
-# Retangulo
 
 color("Yellow")
 right(60)
