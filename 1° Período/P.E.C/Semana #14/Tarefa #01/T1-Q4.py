@@ -22,8 +22,8 @@ def main():
     nomeMaisAlto = lista_nomes[index_maiorAltura]
 
     print('JOGADOR MAIS ALTO DO TIME')
-    print(nomeMaisAlto) # nome 
-    print(f'{maiorAltura:.2f}') # maior altura
+    print(nomeMaisAlto)
+    print(f'{maiorAltura:.2f}')
 
     print('ALTURA MÉDIA DO TIME')
     print(f'{media:.2f}')    
