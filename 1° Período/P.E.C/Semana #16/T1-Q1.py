@@ -1,6 +1,3 @@
-# # 01.Faça um programa para ler uma matriz quadrada de ordem n e mostre uma tupla com a posição (linha e coluna) do
-# maior e menor elemento. O valore de n é inteiro, positivo e deve ser informados pelo usuário.
-
 def ler_matriz(n):
     matriz = []
     for i in range(n):
@@ -11,9 +8,6 @@ def ler_matriz(n):
         matriz.append(linha)
     return matriz
 
-# mostre uma tupla com a posição (linha e coluna) do
-# maior e menor elemento
-
 def comparar_maior(matriz):
     maior = matriz[0][0]
     posicao_maior = (0,0)
@@ -22,7 +16,7 @@ def comparar_maior(matriz):
         for j in range(len(matriz[i])):
             if matriz[i][j] > maior:
                 maior = matriz[i][j]
-                posicao_maior = (i, j) # já sao os indices 
+                posicao_maior = (i, j)
     return posicao_maior  
  
 def comparar_menor(matriz):
@@ -33,7 +27,7 @@ def comparar_menor(matriz):
         for j in range(len(matriz[i])):
             if matriz[i][j] < menor:
                 menor = matriz[i][j]
-                posicao_menor = (i, j) # já sao os indices 
+                posicao_menor = (i, j)
     return posicao_menor   
 
 def main():
