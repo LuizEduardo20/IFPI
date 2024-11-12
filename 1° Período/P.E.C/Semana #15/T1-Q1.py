@@ -2,7 +2,7 @@ def ler_temp_escala():
     lista_temp = []
     lista_escala = []
     
-    for i in range(2): # mudar esse 2 depois?
+    for i in range(2):?
         t = float(input())
         e = input().upper()[0]
         lista_temp.append(t)
@@ -10,21 +10,19 @@ def ler_temp_escala():
     return lista_temp, lista_escala
 
 def fahrenheit_p_celsius(temp_f):
-    # °C = (°F - 32) * (5/9)
     return (temp_f - 32) * 5/9
 
 def comparar_temperatura(temp_1, temp_2):
-    valor1, escala1 = temp_1 # desempacotar a tupla em duas variáveis
+    valor1, escala1 = temp_1
     valor2, escala2 = temp_2 
 
-    # se °F, transformar em °C
     if escala1 == 'F':
         valor1 = fahrenheit_p_celsius(valor1) 
     if escala2 == 'F':
         valor2 = fahrenheit_p_celsius(valor2)
         
     if valor1 > valor2:
-        return temp_1 # retornar a tupla 
+        return temp_1
     else:
         return temp_2
      
