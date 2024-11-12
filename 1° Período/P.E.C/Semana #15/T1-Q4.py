@@ -13,12 +13,11 @@ def populacao_maior(populacao, cidades):
     lista_cidades_encontradas = []
     for cidade in cidades:
         if cidade[5] > populacao:
-            # IBGE: 292740 - Salvador(BA) - POPULAÇÃO: 2892625
             lista_cidades_encontradas.append(f'IBGE: {cidade[1]} - {cidade[2]}({cidade[0]}) - POPULAÇÃO: {cidade[5]}')          
     return lista_cidades_encontradas
 
 def main():
-    cidades = carrega_cidades() # tem a lista de todas as cidades com as informações
+    cidades = carrega_cidades()
     
     populacao = int(input())
   
