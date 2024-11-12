@@ -1,5 +1,4 @@
 def main():
-    # a) preencha com valores reais lidos pelo teclado e imprima na ordem inversa. Considere até 4 (quatro) casas decimais.
     lista = []
     n = int(input())
     for i in range(n):
@@ -8,7 +7,6 @@ def main():
         lista.insert(0, num)
     print(lista)
     
-    # b) preencha com n notas lidas pelo teclado e imprima as notas e a média na tela. Considere 1 (uma) casa decimal. 
     lista = []
     if n == 0: 
         print(lista)
@@ -22,7 +20,6 @@ def main():
         media = sum(lista)/n
         print(f'{media:.1f}')
     
-    # c) preencha com n letras lidas pelo teclado e imprima quantas vogais foram lidas. Imprima as consoantes. 
     lista = []
     lista_consoante = []
     count = 0
