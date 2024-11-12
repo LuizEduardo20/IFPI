@@ -1,4 +1,3 @@
-# funçao da qst 4
 def eh_primo(num):   
     cont = 0
     i = 1  
@@ -18,7 +17,6 @@ def main():
     num_Y = int(input())
     
     if num_X > num_Y:
-        # inverter para o segundo ser sempre o maior 
         num_X = num_Y
         num_Y = num_X
 
