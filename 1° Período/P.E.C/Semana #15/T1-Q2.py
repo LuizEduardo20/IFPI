@@ -10,11 +10,9 @@ def ler_temp_escala():
     return lista_temp, lista_escala
 
 def fahrenheit_p_celsius(temp_f):
-    # °C = (°F - 32) * (5/9)
     return (temp_f - 32) * 5/9
 
 def celsius_p_fahrenheit(temp_c):
-    # °F = (°C * (9/5)) + 32
     return (temp_c * (9/5)) + 32
 
 def soma_temperatura(temp_1, temp_2):
