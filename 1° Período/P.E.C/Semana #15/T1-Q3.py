@@ -19,10 +19,10 @@ def aniversario_cidades(dia, mes, cidades):
 def mes_por_extenso(mes):
     meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     
-    return meses[mes - 1] # ex: se mes 1, o indice será 1 - 1 = 0. 
+    return meses[mes - 1]
 
 def main():
-    cidades = carrega_cidades() # tem a lista de todas as cidades com as informações
+    cidades = carrega_cidades()
     
     dia = int(input())
     mes = int(input())
