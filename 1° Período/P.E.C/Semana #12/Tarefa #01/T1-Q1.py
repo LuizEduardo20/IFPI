@@ -1,8 +1,8 @@
 def main():
     metrosAFrente = int(input())
 
-    velTartaruga = 1 # m/min
-    velLebre = 10 # m/min
+    velTartaruga = 1
+    velLebre = 10
 
     t = 0
     dist_tartaruga = metrosAFrente
@@ -10,7 +10,7 @@ def main():
 
     while dist_lebre < dist_tartaruga: 
         t += 1
-        dist_tartaruga += velTartaruga   # ΔT = 1 min 
+        dist_tartaruga += velTartaruga
         dist_lebre += velLebre 
 
     print(t)
