@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Modo Noturno por Horário</title>
+    <style>
+        body {
+            transition: background-color 0.5s, color 0.5s;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <h2>Modo Noturno Automático</h2>
+    
+    <p>Digite uma hora (0-23):</p>
+    <input type="number" id="horaInput" min="0" max="23">
+    <button onclick="verificarModoNoturno()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarModoNoturno() {
+            const horaInput = document.getElementById('horaInput');
+            const resultado = document.getElementById('resultado');
+            const body = document.body;
+
+            const hora = parseInt(horaInput.value);
+
+            if (hora >= 18 || hora < 6) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                resultado.textContent = 'Modo Noturno Ativado';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                resultado.textContent = 'Modo Diurno Ativado';
+            }
+        }
+    </script>
+</body>
+</html>
