@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="example">
+        <h3>1. Copiar Conteúdo em Tempo Real</h3>
+        <input type="text" id="source1" placeholder="Digite aqui">
+        <input type="text" id="destination1" placeholder="Conteúdo copiado aparecerá aqui" readonly>
+    </div>
+
+    <div class="example">
+        <h3>2. Copiar e Converter para Maiúsculo</h3>
+        <input type="text" id="source2" placeholder="Digite aqui">
+        <input type="text" id="destination2" placeholder="Conteúdo em maiúsculo" readonly>
+    </div>
+
+    <div class="example">
+        <h3>3. Selecionar Emoção e Carregar Imagem</h3>
+        <select id="emotion-select">
+            <option value="">Selecione uma emoção</option>
+            <option value="alegre">Alegre</option>
+            <option value="triste">Triste</option>
+            <option value="raiva">Raiva</option>
+        </select>
+        <img id="emotion-img" src="" alt="Imagem da Emoção">
+    </div>
+
+    <div class="example">
+        <h3>4. Mudar Cor no Foco</h3>
+        <input type="text" id="focus-input" placeholder="Clique aqui">
+    </div>
+
+    <div class="example">
+        <h3>5. Validação de Senha</h3>
+        <label for="password">Senha (mínimo 8 caracteres)</label>
+        <input type="password" id="password" placeholder="Digite sua senha">
+        <div id="password-error" class="error"></div>
+    </div>
+
+    <script>
+        // 1. Copiar conteúdo em tempo real
+        document.getElementById('source1').addEventListener('keyup', function() {
+            document.getElementById('destination1').value = this.value;
+        });
+
+        // 2. Copiar e converter para maiúsculo
+        document.getElementById('source2').addEventListener('keyup', function() {
+            document.getElementById('destination2').value = this.value.toUpperCase();
+        });
+
+        // 3. Selecionar emoção e carregar imagem
+        document.getElementById('emotion-select').addEventListener('change', function() {
+            const emotionImg = document.getElementById('emotion-img');
+            switch(this.value) {
+                case 'alegre':
+                    emotionImg.src = 'https://th.bing.com/th/id/OIP.0_zmyOJJaB2n-Nk3wHmPxQHaHa?rs=1&pid=ImgDetMain';
+                    break;
+                case 'triste':
+                    emotionImg.src = 'https://pngfre.com/wp-content/uploads/sad-emoji-poster.png';
+                    break;
+                case 'raiva':
+                    emotionImg.src = 'https://i.pinimg.com/originals/ab/b4/33/abb4338732cb275f59e8ec17aca10671.png';
+                    break;
+                default:
+                    emotionImg.src = '';
+            }
+        });
+
+        // 4. Mudar cor no foco
+        const focusInput = document.getElementById('focus-input');
+        focusInput.addEventListener('focus', function() {
+            this.style.backgroundColor = '#9384'; // Amarelo claro
+        });
+        focusInput.addEventListener('blur', function() {
+            this.style.backgroundColor = ''; // Restaurar cor padrão
+        });
+
+        // 5. Validação de senha
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('password-error');
+
+        passwordInput.addEventListener('blur', function() {
+            const passwordValue = this.value.trim();
+            if (passwordValue.length < 8) {
+                passwordError.textContent = 'A senha deve ter pelo menos 8 caracteres';
+            } else {
+                passwordError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
