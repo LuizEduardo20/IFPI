@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Tamanho de Fonte</title>
+    <style>
+        #textoAjustavel {
+            font-size: 16px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Controle de Tamanho de Fonte</h2>
+    
+    <div id="textoAjustavel">
+        Este texto terá seu tamanho modificado.
+    </div>
+
+    <button onclick="aumentarFonte()">Aumentar Fonte</button>
+    <button onclick="reduzirFonte()">Reduzir Fonte</button>
+
+    <script>
+        function aumentarFonte() {
+            const texto = document.getElementById('textoAjustavel');
+            let tamanhoAtual = parseInt(window.getComputedStyle(texto).fontSize);
+            texto.style.fontSize = (tamanhoAtual + 2) + 'px';
+        }
+
+        function reduzirFonte() {
+            const texto = document.getElementById('textoAjustavel');
+            let tamanhoAtual = parseInt(window.getComputedStyle(texto).fontSize);
+            texto.style.fontSize = (tamanhoAtual - 2) + 'px';
+        }
+    </script>
+</body>
+</html>
