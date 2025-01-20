@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exibir/Ocultar Componente</title>
+    <style>
+        #componenteOculto {
+            width: 300px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Funcionalidade de Exibir/Ocultar</h2>
+    <button onclick="toggleVisibilidade()">Alternar Visibilidade</button>
+    
+    <div id="componenteOculto">
+        Este é um componente que pode ser ocultado ou exibido.
+    </div>
+
+    <script>
+        function toggleVisibilidade() {
+            const elemento = document.getElementById('componenteOculto');
+            
+            if (elemento.style.visibility === 'hidden') {
+                elemento.style.visibility = 'visible';
+            } else {
+                elemento.style.visibility = 'hidden';
+            }
+        }
+    </script>
+</body>
+</html>
