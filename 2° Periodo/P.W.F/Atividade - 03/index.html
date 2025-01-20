@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="Input" type="text">
+    <button onclick="addLeadingZeros()">Add Leading Zeros</button>
+    <p id="output"></p>
+
+    <script>
+        function addLeadingZeros() {
+            const text = document.getElementById('Input').value;
+            const paddedText = text.padStart(5, '0');
+            document.getElementById('output').textContent = paddedText;
+        }
+    </script>
+</body>
+</html>
