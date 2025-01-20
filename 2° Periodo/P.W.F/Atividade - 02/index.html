@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boaTarde">Boa Tarde</button>
+    <button id="boaNoite">Boa Noite</button>
+    <div id="div"></div>
+    <script>
+        const boaTarde = document.querySelector('#boaTarde')
+        const boaNoite = document.querySelector('#boaNoite')
+        const div = document.querySelector('#div')
+            
+        function BoaTarde(){
+            const btn = boaTarde.addEventListener('click', () => {
+                div.innerHTML = 'Boa Tarde'
+            })
+        }
+        
+        BoaTarde()
+        
+        function BoaNoite(){
+            const btn = boaNoite.addEventListener('click', () => {
+                div.innerHTML = 'Boa Noite'
+            })
+        }
+        
+        BoaNoite()
+    </script>
+</body>
+</html>
