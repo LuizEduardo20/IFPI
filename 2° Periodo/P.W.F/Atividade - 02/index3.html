@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>número randômico entre 1 e 10</h2>
+    <h3 id="resultado"></h3><br>
+    <h2>valor absoluto de um número</h2>
+    <h3 id="valor"></h3><br>
+    <h2>Leia 2 números e exiba o maior deles</h2>
+    <h3 id="maior"></h3><br>
+    <h2>Leia um número real e exiba-o de forma arredondada</h2>
+    <h3 id="arredondar"></h3>
+    <h2>Leia dois números e exiba um elevado ao outro</h2>
+    <h3 id="valoresElevados"></h3>
+    
+    <script>
+        const resultado = document.querySelector('#resultado')
+        resultado.innerHTML = Math.floor(Math.random() * 11)
+        //////////
+        const valor = document.querySelector('#valor')
+        const valorDigitado = prompt('Digite um valor positivo ou negativo: ')
+        valor.innerHTML = Math.abs(valorDigitado)
+        /////////
+        const maior = document.querySelector('#maior')
+        const valor1 = prompt('Digite o primeiro valor: ')
+        const valor2 = prompt('Digite o segundo valor: ')
+        maior.innerHTML = Math.max(valor1, valor2)
+        ////////
+        const arredondar = document.querySelector('#arredondar')
+        const valorinserido = prompt('Digite um valor para ser convertido pra inteiro: ')
+        arredondar.innerHTML = Math.round(valorinserido)
+        ///////
+        const valorElevado = document.querySelector('#valoresElevados')
+        const valo1 = prompt('Digite o primeiro valor: ')
+        const valo2 = prompt('Digite o segundo valor: ')
+        valorElevado.innerHTML = Math.pow(valor1, valor2)
+    </script>
+</body>
+</html>
