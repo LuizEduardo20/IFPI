@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima & Cripto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .erro {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Dados do Município</h2>
+            <div class="input-group">
+                <label for="municipio">Município:</label>
+                <input type="text" id="municipio" placeholder="Digite o nome do município" list="municipios">
+                <datalist id="municipios"></datalist>
+            </div>
+            <button onclick="buscarMunicipio()">Buscar Dados</button>
+            <div id="resultado-municipio" class="resultado"></div>
+        </div>
+
+        <div class="card">
+            <h2>Cotação de Criptomoedas</h2>
+            <div class="input-group">
+                <label for="cripto">Criptomoeda:</label>
+                <select id="cripto">
+                    <option value="bitcoin">Bitcoin</option>
+                    <option value="ethereum">Ethereum</option>
+                    <option value="dogecoin">Dogecoin</option>
+                    <option value="cardano">Cardano</option>
+                    <option value="solana">Solana</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="moeda">Moeda:</label>
+                <select id="moeda">
+                    <option value="usd">Dólar (USD)</option>
+                    <option value="brl">Real (BRL)</option>
+                    <option value="eur">Euro (EUR)</option>
+                </select>
+            </div>
+            <button onclick="buscarCripto()">Buscar Cotação</button>
+            <div id="resultado-cripto" class="resultado"></div>
+        </div>
+    </div>
+
+    <script>
+        let municipiosCache = [];
+
+        async function carregarMunicipios() {
+            try {
+                const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/municipios');
+                municipiosCache = await response.json();
+                
+                const datalist = document.getElementById('municipios');
+                municipiosCache.sort((a, b) => a.nome.localeCompare(b.nome)).forEach(municipio => {
+                    const option = document.createElement('option');
+                    option.value = `${municipio.nome} - ${municipio.microrregiao.mesorregiao.UF.sigla}`;
+                    datalist.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Erro ao carregar municípios:', error);
+            }
+        }
+
+        async function buscarMunicipio() {
+            const municipioInput = document.getElementById('municipio').value;
+            const resultadoDiv = document.getElementById('resultado-municipio');
+
+            if (!municipioInput) {
+                resultadoDiv.innerHTML = '<p class="erro">Por favor, digite o nome de um município.</p>';
+                return;
+            }
+
+            try {
+                const [nomeMunicipio, uf] = municipioInput.split(' - ');
+                
+                const municipio = municipiosCache.find(m => 
+                    m.nome === nomeMunicipio && 
+                    m.microrregiao.mesorregiao.UF.sigla === uf
+                );
+
+                if (!municipio) {
+                    throw new Error('Município não encontrado');
+                }
+
+                const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${municipio.id}/distritos`);
+                const distritos = await response.json();
+
+                const regiaoResponse = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${municipio.id}/subdistritos`);
+                const subdistritos = await regiaoResponse.json();
+
+                resultadoDiv.innerHTML = `
+                    <p><strong>Município:</strong> ${municipio.nome}</p>
+                    <p><strong>Estado:</strong> ${municipio.microrregiao.mesorregiao.UF.nome} (${municipio.microrregiao.mesorregiao.UF.sigla})</p>
+                    <p><strong>Região:</strong> ${municipio.microrregiao.mesorregiao.UF.regiao.nome}</p>
+                    <p><strong>Microrregião:</strong> ${municipio.microrregiao.nome}</p>
+                    <p><strong>Mesorregião:</strong> ${municipio.microrregiao.mesorregiao.nome}</p>
+                    <p><strong>Número de Distritos:</strong> ${distritos.length}</p>
+                    <p><strong>Número de Subdistritos:</strong> ${subdistritos.length}</p>
+                `;
+            } catch (error) {
+                resultadoDiv.innerHTML = `<p class="erro">Erro ao buscar dados do município: ${error.message}</p>`;
+            }
+        }
+
+        async function buscarCripto() {
+            const cripto = document.getElementById('cripto').value;
+            const moeda = document.getElementById('moeda').value;
+            const resultadoDiv = document.getElementById('resultado-cripto');
+
+            try {
+                const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cripto}&vs_currencies=${moeda}&include_24hr_change=true&include_last_updated_at=true`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    const preco = data[cripto][moeda];
+                    const variacao24h = data[cripto][`${moeda}_24h_change`];
+                    const ultimaAtualizacao = new Date(data[cripto].last_updated_at * 1000).toLocaleString();
+
+                    const simboloMoeda = {
+                        'usd': '$',
+                        'brl': 'R$',
+                        'eur': '€'
+                    }[moeda];
+
+                    resultadoDiv.innerHTML = `
+                        <p><strong>Preço:</strong> ${simboloMoeda}${preco.toLocaleString()}</p>
+                        <p><strong>Variação 24h:</strong> ${variacao24h.toFixed(2)}%</p>
+                        <p><strong>Última Atualização:</strong> ${ultimaAtualizacao}</p>
+                    `;
+                } else {
+                    throw new Error('Erro ao buscar dados da criptomoeda');
+                }
+            } catch (error) {
+                resultadoDiv.innerHTML = `<p class="erro">Erro ao buscar cotação: ${error.message}</p>`;
+            }
+        }
+
+        carregarMunicipios();
+    </script>
+</body>
+</html>
