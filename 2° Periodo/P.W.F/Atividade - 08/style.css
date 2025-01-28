@@ -1,12 +1,67 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center; /* Center the content */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left; /* Align labels to the left */
+    color: #555;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* Subtract padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 .botoes {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive buttons */
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .botoes button {
-    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#botaoConsultar {
+    background-color: #007bff; /* Bootstrap blue */
+}
+
+#botaoConsultar:hover {
+    background-color: #0056b3;
 }
 
 #botaoInverter {
@@ -23,4 +78,20 @@
 
 #botaoLimpar:hover {
     background-color: #c82333;
-} 
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Optional: Styles for error message */
+#resultado.error{
+  color: #dc3545;
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
