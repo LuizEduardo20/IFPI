@@ -1,64 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>API de Conselhos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-        }
-
-        h1 {
-            color: #1a73e8;
-            margin-bottom: 2rem;
-        }
-
-        button {
-            background-color: #1a73e8;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #1557b0;
-        }
-
-        #advice {
-            margin-top: 2rem;
-            padding: 1rem;
-            max-width: 600px;
-            text-align: center;
-            color: #333;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>API de Conselhos</h1>
-    <button onclick="getAdvice()">Obter Conselho</button>
-    <h2 id="advice"></h2>
+    <div class="container">
+        <h1>Consultar Preço de Moedas</h1>
+        
+        <label for="moedaBase">Moeda Base (Ex.: BTC):</label>
+        <input type="text" id="moedaBase" list="moedasPopulares" placeholder="Digite a moeda base">
+        
+        <label for="moedaConversao">Moeda Conversão (Ex.: USDT):</label>
+        <input type="text" id="moedaConversao" list="moedasPopulares" placeholder="Digite a moeda de conversão">
+        
+        <datalist id="moedasPopulares">
+            <option value="BTC">Bitcoin</option>
+            <option value="ETH">Ethereum</option>
+            <option value="USDT">Tether</option>
+            <option value="BNB">Binance Coin</option>
+            <option value="ADA">Cardano</option>
+            <option value="DOGE">Dogecoin</option>
+            <option value="XRP">Ripple</option>
+            <option value="SOL">Solana</option>
+            <option value="DOT">Polkadot</option>
+            <option value="BUSD">Binance USD</option>
+            <option value="BRL">Real Brasileiro</option>
+            <option value="EUR">Euro</option>
+        </datalist>
 
-    <script>
-        async function getAdvice() {
-            try {
-                const response = await fetch('https://api.adviceslip.com/advice');
-                const data = await response.json();
-                document.getElementById('advice').textContent = data.slip.advice;
-            } catch (error) {
-                document.getElementById('advice').textContent = 'Erro ao obter conselho. Tente novamente.';
-            }
-        }
-    </script>
+        <div class="botoes">
+            <button id="botaoConsultar">Consultar</button>
+            <button id="botaoInverter">Inverter Moedas</button>
+            <button id="botaoLimpar">Limpar Campos</button>
+        </div>
+        
+        <div id="resultado"></div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
-</html>
+</html> 
