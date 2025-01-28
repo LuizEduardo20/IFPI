@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>API de Conselhos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1557b0;
+        }
+
+        #advice {
+            margin-top: 2rem;
+            padding: 1rem;
+            max-width: 600px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>API de Conselhos</h1>
+    <button onclick="getAdvice()">Obter Conselho</button>
+    <h2 id="advice"></h2>
+
+    <script>
+        async function getAdvice() {
+            try {
+                const response = await fetch('https://api.adviceslip.com/advice');
+                const data = await response.json();
+                document.getElementById('advice').textContent = data.slip.advice;
+            } catch (error) {
+                document.getElementById('advice').textContent = 'Erro ao obter conselho. Tente novamente.';
+            }
+        }
+    </script>
+</body>
+</html>
