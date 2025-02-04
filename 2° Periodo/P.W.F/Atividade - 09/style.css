@@ -1,0 +1,17 @@
+.post {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+.comments-section {
+    display: none;
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.author-info {
+    color: #666;
+    margin-bottom: 10px;
+}
