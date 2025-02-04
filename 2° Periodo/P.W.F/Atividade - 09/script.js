@@ -58,7 +58,7 @@ class TimelineApp {
         }
     }
 
-    async fetchComments(postId) {
+    async comments(postId) {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
             return await response.json();
@@ -115,7 +115,7 @@ class TimelineApp {
         button.textContent = 'Ocultar comentários';
         
         if (!commentsSection.hasAttribute('data-loaded')) {
-            const comments = await this.fetchComments(postId);
+            const comments = await this.comments(postId);
             
             let commentsHTML = '<h3>Comentários</h3>';
             comments.forEach(comment => {
@@ -134,7 +134,7 @@ class TimelineApp {
     }
 
     async showComments(postId) {
-        const comments = await this.fetchComments(postId);
+        const comments = await this.comments(postId);
         const commentsContent = document.getElementById('commentsContent');
         
         commentsContent.innerHTML = comments.map(comment => `
