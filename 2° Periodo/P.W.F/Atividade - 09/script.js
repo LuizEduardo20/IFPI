@@ -12,14 +12,14 @@ class TimelineApp {
 
     async init() {
         try {
-            await this.fetchAllUsers();
-            await this.fetchPosts();
+            await this.usuario();
+            await this.posts();
         } catch (error) {
             console.error('Erro ao iniciar:', error);
         }
     }
 
-    async fetchAllUsers() {
+    async usuario() {
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/users');
             this.users = await response.json();
@@ -28,7 +28,7 @@ class TimelineApp {
         }
     }
 
-    async fetchPosts() {
+    async posts() {
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/posts');
             const posts = await response.json();
