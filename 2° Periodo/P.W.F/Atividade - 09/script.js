@@ -36,7 +36,7 @@ class TimelineApp {
             if (Array.isArray(posts)) {
                 for (const post of posts) {
                     const author = this.users.find(user => user.id === post.userId) || 
-                                 await this.fetchAuthor(post.userId);
+                                 await this.author(post.userId);
                     this.createPostElement(post, author);
                 }
             } else {
@@ -48,7 +48,7 @@ class TimelineApp {
 
     }
 
-    async fetchAuthor(userId) {
+    async author(userId) {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
             const author = await response.json();
