@@ -15,4 +15,3 @@ while True:
     print('Valores Invalidos')
 
 resultado = somarMedia(nota1, nota2)
-print(resultado)
