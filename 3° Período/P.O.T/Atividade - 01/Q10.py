@@ -1,8 +1,15 @@
 def Max(a, b, c, d):
-    return max(a, b, c, d)
+    maior = a
+    if b > maior:
+        maior = b
+    elif c > maior:
+        maior = c
+    elif d > maior:
+        maior = d
+    return maior
 
 for i in range(4):
-    print(f"Série {i + 1}:")
+    print(f"## Série {i + 1}: ##")
     try:
         a = int(input("Digite o primeiro número: "))
         b = int(input("Digite o segundo número: "))
