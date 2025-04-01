@@ -1,4 +1,4 @@
-### Atividade feitas durante o curso de TADS (Tecnico em Analise e desenvolvimento de sistemas)
+### Atividade feitas durante o curso de TDS (Tecnico em Analise e desenvolvimento de sistemas)
 
 <div>
   <h1>1° Periodo:</h1>
