@@ -1,4 +1,4 @@
-def Max(a, b, c, d):
+def max(a, b, c, d):
     maior = a
     if b > maior:
         maior = b
