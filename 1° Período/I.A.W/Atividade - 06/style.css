@@ -1,0 +1,36 @@
+body a {
+    text-decoration: none;
+}
+
+a:link {color:blue;
+    text-decoration: none;}
+    
+a:visited{ color: blue;
+    text-decoration: none;}
+
+    a:hover { color: lightblue;
+    text-decoration: underline;}
+
+    a:active {color: lightblue;
+    text-decoration: underline;}
+
+.social-links {
+    display: flex;
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    background-size: cover;
+}
+
+.github{
+    background-image: url('https://th.bing.com/th?id=ODLS.f9a3596b-7a2c-4d15-97c4-f7de16c0dbb3&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2');
+}
+
+.instagram{
+    background-image: url('https://th.bing.com/th?id=ODLS.bc2285e6-18ab-4eac-80d8-28a552192970&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2');
+}
