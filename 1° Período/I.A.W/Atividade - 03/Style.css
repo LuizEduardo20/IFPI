@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+body {
+    font-size: 16px;
+    background-image: linear-gradient(to left, #b3cce2, #d9ccc1);
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 3rem;
+    background-color: #005eb0;
+    color: #d9ccc1;
+}
+
+h1, h2 {
+    font-size: 1.5rem;
+    background-color: #005eb0;
+    color: #d9ccc1;
+}
+
+div {
+    font-size: 1.0rem;
+}
+
+.paragraph, .paragraph2{
+    font-size: 1.0rem;
+    color: #024059;
+}
+
+.name {
+    text-align: right;
+}
+
+.text {
+    font-family: 'tilt', sans-serif;
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.autor{
+    color: darkslategray;
+}
+
+.date{
+    color: darkslategray;
+    font-size: 0.8rem;
+}
+
+.riscado {
+    position: relative;
+  }
+  .riscado:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 1px solid;
+    border-color: inherit;
+    
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+}
