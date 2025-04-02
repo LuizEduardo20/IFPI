@@ -1,0 +1,23 @@
+h1 {
+    background-image: linear-gradient(rgb(0, 203, 253), rgb(0, 89, 255));
+    padding: 3%;
+    text-align: center;
+    font-size: 7vh;
+}
+
+h2 {
+    background-image: linear-gradient(rgb(0, 203, 253), rgb(0, 89, 255));
+}
+
+.proibido{
+    list-style-image: url(Imagens/Proibido.jpg);
+}
+
+.ciclista{
+    list-style-image: url(Imagens/Ciclismo.jpg);
+    height: 16%;
+}
+
+.obras{
+    list-style-image: url(Imagens/obras.jpg);
+}
