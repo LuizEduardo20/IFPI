@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="search">Pesquisa</label>
+        <input type="search" name="search" id="search" list="pesquisa">
+
+        <datalist id="pesquisa">
+            <option value="Açucar"></option>
+            <option value="Fermento bíologico"></option>
+            <option value="Trigo"></option>
+            <option value="Ovos"></option>
+            <option value="Água"></option>
+        </datalist>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="tel">Telefone</label>
+        <input type="tel" name="tel" id="tel" placeholder="(00)000000000">
+
+        <label for="year">idade</label>
+        <input type="number" name="year" id="year" min="1" max="80">
+
+        <label for="pergunta">Qual é o seu nivel de urgência de uma resposta?</label>
+        <label for="value">0</label>
+        <input type="range" name="range" id="range" min="1" max="10">
+        <label for="value">9</label>
+
+        <label for="date">Data de Nascimento</label>
+        <input type="date" name="date" id="date">
+
+        <label for="hour">Horario de receber ligações</label>
+        <input type="time" name="time" id="time">
+
+        <label for="color">cor do perfil</label>
+        <input type="color" name="color" id="color">
+
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="fname">Primeiro Nome</label>
+            <input type="text" name="fistname" id="fistname">
+            <label for="lname">Sobrenome</label>
+            <input type="text" name="lname" id="lname">
+            <label for="fistname">Endereço</label>
+            <input type="text" name="fistname" id="fistname">
+            <label for="course">Curso</label>
+            <input type="text" name="course" id="course">
+        </fieldset>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" required placeholder="ABCDEFG123" pattern="[A-Za-z]{3}">
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
