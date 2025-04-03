@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://exemplo.com/inscricao">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" maxlength="12">
+
+        <label for="year">Idade</label>
+        <input type="number" name="year" id="year">
+        <input type="submit" value="Enviar">
+
+        <label for="pergunta1">Qual é o seu nivel de satisfação com o nosso serviço?</label>
+        <input type="radio" name="radio" id="radio">
+        <label for="escolha1">Satisfeito</label>
+
+        <input type="radio" name="radio" id="radio">
+        <label for="escolha2">Neutro</label>
+
+        <input type="radio" name="radio" id="radio">
+        <label for="escolha3">Insatisfeito</label>
+
+        <label for="pergunta2">Quais Newsletters o usuário deseja assina?</label>
+        <input type="radio" name="radio" id="radio">
+        <label for="escolha1">Novidade</label>
+
+        <input type="radio" name="radio" id="radio">
+        <label for="escolha2">Promoções</label>
+
+        <input type="radio" name="radio" id="radio">
+        <label for="escolha3">Artigos Tecnicos</label>
+
+        <label for="pergunta3">Com que frequencia o usuário deseja receber as Newsletters?</label>
+        <select name="selecao" id="selecao">
+            <option value="op1">Diariamente</option>
+            <option value="op2">Semanalmente</option>
+            <option value="op3">Mensalmente</option>
+        </select>
+        <textarea name="textarea" id="textarea">Como podemos melhorar nossos servisos?</textarea>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetar">
+    </form>
+</body>
+</html>
