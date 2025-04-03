@@ -7,13 +7,13 @@ class Pedra_Papel_Tesoura:
 
     def obter_escolha_usuario(self):
         escolha = input(
-            "Escolha Pedra, Papel ou Tesoura (ou 'sair' para encerrar): ").strip().lower()
+            "Escolha Pedra, Papel ou Tesoura (ou digite 0 para encerrar): ").strip().lower()
         if escolha in ['pedra', 'papel', 'tesoura']:
             self.escolha_usuario = escolha
-        elif escolha == 'sair':
+        elif escolha == '0':
             return None
         else:
-            print("Escolha inválida. Tente novamente.")
+            print("Escolha inválida.")
             return self.obter_escolha_usuario()
         return self.escolha_usuario
 
