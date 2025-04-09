@@ -2,21 +2,23 @@ lista = []
 listaPositivo = []
 listaNegativa = []
 
+def positivo_negativo(valor):
+    if valor > 0:
+        listaPositivo.append(valor)
+    elif valor < 0:
+        listaNegativa.append(valor)
+
 for i in range(10):
     while True:
         try:
-            valor = int(input('Diite um valor: '))
-            lista.append(valor)
-            
-            if valor > 0:
-                listaPositivo.append(valor)
-            else:
-                listaNegativa.append(valor)
-                break
-        
+            x = int(input('Digite um valor: '))
+            lista.append(x)
+            positivo_negativo(x)
+            break
         except ValueError:
-            print('Valor Invalido !!')
+            print('Valor Inválido!!')
 
-print(lista)
-print(listaPositivo)
-print(listaNegativa)
+
+print("Lista completa:", lista)
+print("Lista de números positivos:", listaPositivo)
+print("Lista de números negativos:", listaNegativa)
