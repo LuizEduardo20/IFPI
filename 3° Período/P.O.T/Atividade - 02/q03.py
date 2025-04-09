@@ -9,7 +9,11 @@ for i in range(10):
             break
         except ValueError:
             print('Valor Invalido !!')
-
-for i in range(len(lista)-1, -1, -1):
-    lista_invertida.append(lista[i])
-print(lista_invertida)
+            
+            
+def inverso():
+    for i in range(len(lista)-1, -1, -1):
+        lista_invertida.append(lista[i])
+    print(lista_invertida)
+    
+inverso()
