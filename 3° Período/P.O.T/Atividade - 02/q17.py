@@ -1,14 +1,11 @@
 def ler_lista(tamanho):
     lista = []
     for i in range(tamanho):
-        numero = float(input(f"Digite o {i+1}º elemento da lista: "))
+        numero = int(input(f"Digite o {i+1}º elemento da lista: "))
         lista.append(numero)
     return lista
 
-def contar_ocorrencias(lista, valor):
-    return lista.count(valor)
-
-def encontrar_posicoes(lista, valor):
+def encontrar_ocorrencias(lista, valor):
     posicoes = []
     for i in range(len(lista)):
         if lista[i] == valor:
@@ -18,14 +15,14 @@ def encontrar_posicoes(lista, valor):
 def main():
     W = ler_lista(10)
     
-    V = float(input("\nDigite o valor V para buscar na lista: "))
+    V = int(input("\nDigite o valor V para buscar na lista: "))
     
-    ocorrencias = contar_ocorrencias(W, V)
+    posicoes = encontrar_ocorrencias(W, V)
     
-    posicoes = encontrar_posicoes(W, V)
-    
-    print(f"\nO valor {V} aparece {ocorrencias} vez(es) na lista.")
-    if ocorrencias > 0:
+    if len(posicoes) == 0:
+        print(f"\nO valor {V} não ocorre nenhuma vez na lista W.")
+    else:
+        print(f"\nO valor {V} ocorre {len(posicoes)} vez(es) na lista W.")
         print(f"O valor {V} aparece nas seguintes posições: {posicoes}")
 
 if __name__ == "__main__":
