@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - Olá</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="/tabela" method="post">
+        <div>
+            <label for="codigo">Codigo:</label>
+            <select name="codigo" id="codigo">
+                <option value="MXRF11">MXRF11</option>
+                <option value="ITSA4">ITSA4</option>
+                <option value="BBSE3">BBSE3</option>
+                <option value="VALE3">VALE3</option>
+            </select>
+        </div>
+        <div>
+            <label for="data">Data:</label>
+            <input type="date" name="data" id="data">
+        </div>
+        <div>
+            <label for="tipo">Tipo:</label>
+            <input type="radio" name="tipo" id="compra" value="compra">
+            <label for="compra">Compra</label>
+            <input type="radio" name="tipo" id="venda" value="venda">
+            <label for="venda">Venda</label>
+        </div>
+        <div>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" name="quantidade" id="quantidade">
+        </div>
+        <div>
+            <label for="preco">Preço:</label>
+            <input type="number" name="preco" id="preco" step="0.01">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
