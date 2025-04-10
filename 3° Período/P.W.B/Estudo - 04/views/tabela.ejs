@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - Olá (Resposta)</title>
+</head>
+<body>
+    <h1>Dados Recebidos</h1>
+    <table style="border: 1px solid black;">
+        <tr>
+          <th>Codigo</th>
+          <th>Data</th>
+          <th>Tipo</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th>Total</th>
+        </tr>
+        <% for (let i = 0; i < listaOperadores.length; i++) { %>
+        <tr>
+            <% for (let j = 0; j < listaOperadores[i].length; j++) { %>
+                <td><%= listaOperadores[i][j] %></td>
+            <% } %>
+        </tr>
+        <% } %>
+      </table>
+      <a href="/">Voltar</a>
+</body>
+</html>
