@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno</title>
+</head>
+<body>
+    <h1>Dados Recebidos</h1>
+    <table style="border: 1px solid black;">
+        <tr>
+          <th>Disciplina</th>
+          <th>Nota1</th>
+          <th>Nota2</th>
+          <th>Média</th>
+        </tr>
+        <% for (let i = 0; i < listaAluno.length; i++) { %>
+        <tr>
+            <td><%= listaAluno[i].disciplina %></td>
+            <td><%= listaAluno[i].nota1 %></td>
+            <td><%= listaAluno[i].nota2 %></td>
+            <td><%= listaAluno[i].media %></td>
+        </tr>
+        <% } %>
+      </table>
+      <a href="/cadastro">Cadastro</a>
+</body>
+</html>
