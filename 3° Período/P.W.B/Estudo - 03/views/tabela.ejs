@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <style>
+        table, tr, th {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resumo de Movimentação</h1>
+    <table>
+        <tr>
+          <th>Código</th>
+          <th>Data</th>
+          <th>Tipo</th>
+          <th>Quantidade</th>
+          <th>Valor</th>
+          <th>Valor Liquido</th>
+        </tr>
+        <% for (let i = 0; i < lista.length; i++) { %>
+          <tr>
+              <% for (let j = 0; j < lista[i].length; j++) { %>
+                  <td><%= lista[i][j] %></td>
+              <% } %>
+          </tr>
+        <% } %>
+    </table>
+</body>
+</html>

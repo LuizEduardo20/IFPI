@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <form action='/tabela' method="post">
+        <div>
+            <label for="codigo">codigo:</label>
+            <select name="codigo" id="codigo">
+                <option value="MXRF11">MXRF11</option>
+                <option value="VGRI11">VGRI11</option>
+                <option value="HGRE11">HGRE11</option>
+            </select>
+        </div>
+        <div>
+            <label for="data">data:</label>
+            <input type="date" name="data" id="data">
+        </div>
+        <div>
+            <span>Tipo:</span>
+            <input type="radio" name="tipo" id="compra" value="compra">
+            <label for="compra">compra</label>
+            <input type="radio" name="tipo" id="venda" value="venda">
+            <label for="venda">venda</label>
+        </div>
+        <div>
+            <label for="quantidade">quantidade:</label>
+            <input type="number" name="quantidade" id="quantidade">
+        </div>
+        <div>
+            <label for="valor">valor:</label>
+            <input type="number" name="valor" id="valor">
+        </div>
+        <input type="submit" value="Registrar">            
+    </form>
+</body>
+</html>
