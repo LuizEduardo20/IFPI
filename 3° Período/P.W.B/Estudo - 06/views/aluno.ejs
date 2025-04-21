@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno</title>
+    <link rel="stylesheet" href="/styles/aluno.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/aluno">Aluno</a>
+        <a href="/professor">Professor</a>
+    </nav>
+    <table>
+        <tr>
+            <th>Disciplina</th>
+            <th>1° Nota</th>
+            <th>2° Nota</th>
+            <th>Média</th>
+        </tr>
+        <% for (let i = 0; i < lista.length; i++) {%>
+            <tr>
+                <td><%= lista[i].disciplina %></td>
+                <td><%= lista[i].nota1 %></td>
+                <td><%= lista[i].nota2 %></td>
+                <td><%= lista[i].media %></td>
+            </tr>
+        <% } %>
+    </table>
+    <a class="linkFinal" href="/novaEntrada">Nova Entrada</a>
+</body>
+</html>

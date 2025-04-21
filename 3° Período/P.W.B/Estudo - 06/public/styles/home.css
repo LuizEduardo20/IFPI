@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+nav{
+    background-color: #cacaca;
+    padding: 10px;
+    width: 150vh;
+    border-radius: 10px;
+    position: relative;
+    left: 40vh;
+}
+
+nav a:nth-child(1) {
+    background-color: #1100ff;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+nav a {
+    color: #000000;
+    padding: 10px;
+}
