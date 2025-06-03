@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "pergunta": "Qual a capital do Brasil?",
+    "alternativaA": "Rio de Janeiro",
+    "alternativaB": "Brasília",
+    "alternativaC": "São Paulo",
+    "respostaCorreta": "B"
+  },
+  {
+    "id": 2,
+    "pergunta": "Qual o maior planeta do Sistema Solar?",
+    "alternativaA": "Terra",
+    "alternativaB": "Júpiter",
+    "alternativaC": "Saturno",
+    "respostaCorreta": "B"
+  },
+  {
+    "id": 3,
+    "pergunta": "Quem escreveu 'Dom Casmurro'?",
+    "alternativaA": "Machado de Assis",
+    "alternativaB": "José de Alencar",
+    "alternativaC": "Carlos Drummond de Andrade",
+    "respostaCorreta": "A"
+  },
+  {
+    "id": 4,
+    "pergunta": "Qual é o elemento químico representado pelo símbolo 'O'?",
+    "alternativaA": "Ouro",
+    "alternativaB": "Oxigênio",
+    "alternativaC": "Osmio",
+    "respostaCorreta": "B"
+  },
+  {
+    "id": 5,
+    "pergunta": "Em que continente fica o Egito?",
+    "alternativaA": "África",
+    "alternativaB": "Ásia",
+    "alternativaC": "Europa",
+    "respostaCorreta": "A"
+  }
+]
