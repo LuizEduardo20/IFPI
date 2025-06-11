@@ -1,0 +1,39 @@
+<% var css = 'resultado'; %>
+<%- include('../partials/header') %>
+
+<div class="resultado-page text-center mt-5">
+  <h2 class="mb-4">Resultado</h2>
+  <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+      <h3 class="card-title mb-4"><%= pergunta.pergunta %></h3>
+      
+      <div class="mb-4">
+        <div class="alert <%= acertou ? 'alert-success' : 'alert-danger' %>">
+          <h4><%= acertou ? 'Parabéns! Você acertou!' : 'Ops! Você errou!' %></h4>
+        </div>
+      </div>
+
+      <div class="alternativas text-start">
+        <h5>Alternativas:</h5>
+        <div class="list-group">
+          <div class="list-group-item <%= pergunta.correta === 1 ? 'list-group-item-success' : '' %>">
+            <%= pergunta.alternativa1 %>
+          </div>
+          <div class="list-group-item <%= pergunta.correta === 2 ? 'list-group-item-success' : '' %>">
+            <%= pergunta.alternativa2 %>
+          </div>
+          <div class="list-group-item <%= pergunta.correta === 3 ? 'list-group-item-success' : '' %>">
+            <%= pergunta.alternativa3 %>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="/jogo" class="btn btn-primary btn-lg">Próxima Pergunta</a>
+        <a href="/" class="btn btn-secondary btn-lg ms-2">Voltar ao Início</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
