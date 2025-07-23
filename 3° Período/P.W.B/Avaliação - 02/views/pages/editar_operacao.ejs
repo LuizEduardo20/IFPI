@@ -1,0 +1,39 @@
+<div class="operations-container">
+    <div class="page-header">
+        <h2>Editar Operação</h2>
+        <p>Altere os dados da sua operação</p>
+    </div>
+
+    <div class="div-form">
+        <form action="/operacoes/atualizar/<%= operacao.id %>" method="POST">
+            <div>
+                <label for="inputData">Data</label>
+                <input type="date" name="data" id="inputData" required value="<%= operacao.data.toISOString().slice(0,10) %>">
+            </div>
+            <div>
+                <label for="inputAtivo">Código do ativo</label>
+                <input type="text" name="ativo" id="inputAtivo" required value="<%= operacao.ativo %>">
+            </div>
+            <div class="radio-group">
+                <label for="inputTipo">Tipo de operação:</label>
+                <br><br>
+                <input type="radio" name="tipoDeOperacao" id="inputTipoCompra" value="compra" <%= operacao.tipoDeOperacao === 'compra' ? 'checked' : '' %>>
+                <label for="inputTipoCompra">Compra</label>
+                <input type="radio" name="tipoDeOperacao" id="inputTipoVenda" value="venda" <%= operacao.tipoDeOperacao === 'venda' ? 'checked' : '' %>>
+                <label for="inputTipoVenda">Venda</label>
+            </div>
+            <div>
+                <label for="inputQuantidade">Quantidade</label>
+                <input type="number" name="quantidade" id="inputQuantidade" required min="1" step="1" value="<%= operacao.quantidade %>">
+            </div>
+            <div>
+                <label for="inputPreco">Preço unitário</label>
+                <input type="number" name="preco" id="inputPreco" required min="0.01" step="0.01" value="<%= operacao.preco %>">
+            </div>
+            <div class="form-actions">
+                <input type="submit" value="Salvar alterações">
+                <a href="/operacoes/operacoes" class="btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div> 
